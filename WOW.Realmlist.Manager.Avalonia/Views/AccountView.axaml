@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WOW.RealmList.Manager.Avalonia.Views.AccountView"
+             xmlns:vm="clr-namespace:WOW.RealmList.Manager.Avalonia.ViewModels"
+             x:DataType="vm:AccountViewModel">
+    <StackPanel>
+        <Button Content="Back" Command="{Binding MainViewModel.GoBack}" />
+        <!-- Поля для ввода нового аккаунта -->
+        <TextBox Watermark="Account Login" Text="{Binding NewAccountLogin}" />
+        <TextBox Watermark="Account Password" Text="{Binding NewAccountPassword}" />
+
+        <!-- Кнопки для управления аккаунтами -->
+        <Button Content="Add Account" Command="{Binding AddAccountCommand}" />
+        <Button Content="Edit Account" Command="{Binding EditAccountCommand}" />
+        <Button Content="Remove Account" Command="{Binding RemoveAccountCommand}" />
+
+        <!-- Список аккаунтов -->
+        <ListBox ItemsSource="{Binding Accounts}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Отображение логина аккаунта -->
+                        <TextBlock Text="{Binding Login}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                        <!-- Опционально: Отображение пароля (если нужно) -->
+                        <TextBlock Text="{Binding Password}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>

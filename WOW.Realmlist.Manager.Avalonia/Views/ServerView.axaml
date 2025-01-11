@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:WOW.RealmList.Manager.Avalonia.ViewModels"
+             x:DataType="vm:ServerViewModel"
+             x:Class="WOW.RealmList.Manager.Avalonia.Views.ServerView">
+    <StackPanel>
+        <TextBox Watermark="Server Name" Text="{Binding NewServerName}" />
+        <Button Content="Add Server" Command="{Binding AddServerCommand}" />
+        <Button Content="Edit Server" Command="{Binding EditServerCommand}" />
+        <Button Content="Remove Server" Command="{Binding RemoveServerCommand}" />
+        <ListBox x:Name="items" ItemsSource="{Binding Servers}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Button Content="{Binding Name}" 
+                            Command="{ReflectionBinding #items.DataContext.NavigateToRealmListCommand}"
+                            CommandParameter="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>

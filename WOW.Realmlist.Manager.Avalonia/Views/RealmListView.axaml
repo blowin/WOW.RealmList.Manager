@@ -1,0 +1,37 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="WOW.RealmList.Manager.Avalonia.Views.RealmListView"
+             xmlns:vm="clr-namespace:WOW.RealmList.Manager.Avalonia.ViewModels"
+             x:DataType="vm:RealmListViewModel">
+    <StackPanel>
+        <Button Content="Back" Command="{Binding MainViewModel.GoBack}" />
+        <!-- Поля для ввода нового реалма -->
+        <TextBox Watermark="RealmList Name" Text="{Binding NewRealmListName}" />
+        <TextBox Watermark="RealmList Address" Text="{Binding NewRealmListAddress}" />
+
+        <!-- Кнопки для управления реалмами -->
+        <Button Content="Add RealmList" Command="{Binding AddRealmListCommand}" />
+        <Button Content="Edit RealmList" Command="{Binding EditRealmListCommand}" />
+        <Button Content="Remove RealmList" Command="{Binding RemoveRealmListCommand}" />
+
+        <!-- Список реалмов -->
+        <ListBox x:Name="items" ItemsSource="{Binding RealmLists}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!-- Отображение имени реалма -->
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="0,0,10,0" />
+
+                        <!-- Кнопка для перехода к аккаунтам -->
+                        <Button Content="View Accounts" 
+                                Command="{ReflectionBinding #items.DataContext.NavigateToAccountCommand}"
+                                CommandParameter="{Binding}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</UserControl>

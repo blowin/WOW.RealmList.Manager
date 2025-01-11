@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOW.RealmList.Manager.Domain", "WOW.RealmList.Manager.Domain\WOW.RealmList.Manager.Domain.csproj", "{388C7A4D-24DD-4907-A0B5-64571AF6A0B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOW.RealmList.Manager.Avalonia", "WOW.RealmList.Manager.Avalonia\WOW.RealmList.Manager.Avalonia.csproj", "{329DF32B-C909-47E6-B330-C34AA9C287BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOW.RealmList.Manager.Sqlite.Migration", "WOW.RealmList.Manager.Sqlite.Migration\WOW.RealmList.Manager.Sqlite.Migration.csproj", "{15FCCA0B-F8CF-4398-9E4B-2DE91E47385A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{388C7A4D-24DD-4907-A0B5-64571AF6A0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{388C7A4D-24DD-4907-A0B5-64571AF6A0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{388C7A4D-24DD-4907-A0B5-64571AF6A0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{388C7A4D-24DD-4907-A0B5-64571AF6A0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329DF32B-C909-47E6-B330-C34AA9C287BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329DF32B-C909-47E6-B330-C34AA9C287BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329DF32B-C909-47E6-B330-C34AA9C287BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329DF32B-C909-47E6-B330-C34AA9C287BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FCCA0B-F8CF-4398-9E4B-2DE91E47385A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FCCA0B-F8CF-4398-9E4B-2DE91E47385A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FCCA0B-F8CF-4398-9E4B-2DE91E47385A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FCCA0B-F8CF-4398-9E4B-2DE91E47385A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
